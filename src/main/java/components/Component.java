@@ -3,6 +3,8 @@ package components;
 import netlists.Netlist;
 import org.json.simple.JSONObject;
 
+import java.util.List;
+
 public abstract class Component {
 
     private String type;
@@ -16,11 +18,7 @@ public abstract class Component {
         this.measure = measure;
         this.netlist = netlist;
     }
-
-    public Component(String type, String id) {
-        this.type = type;
-        this.id = id;
-    }
+    public Component(String type, String id) { this.type = type; this.id = id; }
 
     public JSONObject formatJSON() {
         JSONObject compObj = new JSONObject();
@@ -31,12 +29,20 @@ public abstract class Component {
         return compObj;
     }
 
+    public boolean checkNetlistNode(String NetlistNodeID) {
+        List<String> nodeList = this.netlist.getNetlistNodes();
+        return nodeList.contains(NetlistNodeID);
+    }
+
     public abstract String measureType();
     public abstract void parseJSONMeasure(JSONObject jsonObject);
     public abstract void parseJSONNetlist(JSONObject jsonObject);
 
     public void setMeasure(Measure measure) { this.measure = measure; }
     public void setNetlist(Netlist netlist) { this.netlist = netlist; }
+
+    public String getType() { return type; }
+    public String getId() { return id; }
 
     @Override
     public String toString() {

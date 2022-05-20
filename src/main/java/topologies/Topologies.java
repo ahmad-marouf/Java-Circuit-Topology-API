@@ -50,9 +50,9 @@ public class Topologies {
                         component = new Nmos(compID, compObject);
                         break;
                 }
-
                 componentList.add(component);
             }
+
             Topology topology = new Topology(topID, componentList);
             this.topologies.add(topology);
 
@@ -91,7 +91,34 @@ public class Topologies {
         }
     }
 
-    public Topology findTopology(String topID) {
+    public List<Component> queryDevices(String topID) {
+        Topology topology = findTopology(topID);
+        if (topology == null) {
+            System.out.println("Topology ID not found in saved topologies");
+            return null;
+        }
+        return topology.getDeviceList();
+    }
+
+    public List<Component> queryDevicesWithNetlistNode(String topID, String NetlistNodeID) {
+        Topology topology = findTopology(topID);
+        if (topology == null) {
+            System.out.println("Topology ID not found in saved topologies");
+            return null;
+        }
+        List<Component> deviceList = new ArrayList<>();
+        for (Object device : topology.getDeviceList()) {
+            Component component = (Component) device;
+            if (component.checkNetlistNode(NetlistNodeID))
+                deviceList.add(component);
+        }
+        if (deviceList.isEmpty())
+            return null;
+        else
+            return deviceList;
+    }
+
+    private Topology findTopology(String topID) {
         for (Object topology : queryTopologies()) {
             Topology top = (Topology) topology;
             if (top.getId().equalsIgnoreCase(topID))

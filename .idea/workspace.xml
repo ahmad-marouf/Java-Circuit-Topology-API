@@ -5,9 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/components/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Component.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Measure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Measure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/NmosMeasure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/NmosMeasure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/ResistorMeasure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/ResistorMeasure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/netlists/Netlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netlists/Netlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/netlists/NmosNetlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netlists/NmosNetlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/netlists/ResistorNetlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/netlists/ResistorNetlist.java" afterDir="false" />
@@ -15,14 +12,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/topologies/Topology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/topologies/Topology.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/components/Component.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/components/Component.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/components/Measure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/components/Measure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/components/NmosMeasure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/components/NmosMeasure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/components/ResistorMeasure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/components/ResistorMeasure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/netlists/Netlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/netlists/Netlist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/netlists/NmosNetlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/netlists/NmosNetlist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/netlists/ResistorNetlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/netlists/ResistorNetlist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/topologies/Topologies.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/topologies/Topologies.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/topologies/Topology.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/topologies/Topology.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topology2.json" beforeDir="false" afterPath="$PROJECT_DIR$/topology2.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,26 +81,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1653011095587" />
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1653024518745">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1653027934527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1653024518745" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1653025277742">
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1653027934527" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1653028462019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1653025277742" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1653025277741">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1653028462019" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1653028462018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1653025277741" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1653025277741">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1653028462018" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1653028462018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1653025277741" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1653025277741">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1653028462018" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1653028462019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1653025277741" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1653028462019" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1653011056366">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

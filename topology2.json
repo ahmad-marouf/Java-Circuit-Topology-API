@@ -1,9 +1,10 @@
 {
   "components":[
-    {"netlist":{
-      "t1":"vdd",
-      "t2":"n1"
-    },
+    {
+      "netlist": {
+        "t1":"vdd",
+        "t2":"n1"
+      },
       "id":"res2",
       "type":"resistor",
       "resistance":{
@@ -12,11 +13,12 @@
         "max":600
       }
     },
-    {"netlist":{
-      "gate":"vin",
-      "source":"vss",
-      "drain":"n1"
-    },
+    {
+      "netlist":{
+        "gate":"vin",
+        "source":"vss",
+        "drain":"n1"
+      },
       "m(l)":{
         "default":1.5,
         "min":1.0,

@@ -3,6 +3,9 @@ package netlists;
 
 import org.json.simple.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ResistorNetlist implements Netlist {
 
     private String t1;
@@ -19,6 +22,14 @@ public class ResistorNetlist implements Netlist {
         netlistObj.put("t1", this.t1);
         netlistObj.put("t2", this.t2);
         return netlistObj;
+    }
+
+    @Override
+    public List<String> getNetlistNodes() {
+        List<String> nodeList = new ArrayList<>();
+        nodeList.add(this.t1);
+        nodeList.add(this.t2);
+        return nodeList;
     }
 
     @Override

@@ -12,10 +12,7 @@ public class Topology {
     private String id;
     private List<Component> components = new ArrayList<>();
 
-    public Topology(String id, List<Component> components) {
-        this.id = id;
-        this.components = components;
-    }
+    public Topology(String id, List<Component> components) { this.id = id; this.components = components; }
 
     public JSONArray formatJSON() {
         JSONArray componentsArray = new JSONArray();
@@ -27,7 +24,10 @@ public class Topology {
         return componentsArray;
     }
 
+
     public String getId() { return id; }
+    public List<Component> getDeviceList() { return this.components; }
+
 
     @Override
     public String toString() {
@@ -37,6 +37,5 @@ public class Topology {
         }
         return topology;
     }
-
 
 }
