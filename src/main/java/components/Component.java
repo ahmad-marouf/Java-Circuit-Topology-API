@@ -43,6 +43,8 @@ public abstract class Component {
 
     public String getType() { return type; }
     public String getId() { return id; }
+    public Measure getMeasure() { return measure; }
+    public Netlist getNetlist() { return netlist; }
 
     @Override
     public String toString() {

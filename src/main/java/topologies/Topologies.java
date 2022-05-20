@@ -21,7 +21,7 @@ public class Topologies {
 
     private List<Topology> topologies = new ArrayList<>();
 
-    public void readJSON(String fileName) {
+    public Topology readJSON(String fileName) {
 
         JSONParser jsonParser = new JSONParser();
         try(FileReader reader = new FileReader(fileName))
@@ -31,6 +31,11 @@ public class Topologies {
 
             // Get topology id
             String topID = (String) topologyObj.get("id");
+            Topology testTopology = findTopology(topID);
+            if (testTopology != null) {
+//                System.out.println("Topology with ID = " + topID + " already present");
+                return null;
+            }
 //            System.out.println(topID);
 
             //Get component list
@@ -56,15 +61,17 @@ public class Topologies {
             Topology topology = new Topology(topID, componentList);
             this.topologies.add(topology);
 
+            return topology;
         } catch (ParseException | IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public void writeJSON(String topID, String fileName) {
         Topology topology = findTopology(topID);
         if (topology == null) {
-            System.out.println("Topology ID not found in saved topologies");
+//            System.out.println("Topology ID not found in saved topologies");
             return;
         }
 
@@ -79,31 +86,31 @@ public class Topologies {
             e.printStackTrace();
         }
     }
-
+    //
     public List<Topology> queryTopologies() {
         return this.topologies;
     }
-
+    //
     public void deleteTopology(String topID) {
         for (int i = 0; i < this.topologies.size(); i++) {
             if (this.topologies.get(i).getId().equalsIgnoreCase(topID))
                 this.topologies.remove(i);
         }
     }
-
+    //
     public List<Component> queryDevices(String topID) {
         Topology topology = findTopology(topID);
         if (topology == null) {
-            System.out.println("Topology ID not found in saved topologies");
+//            System.out.println("Topology ID not found in saved topologies");
             return null;
         }
         return topology.getDeviceList();
     }
-
+    //
     public List<Component> queryDevicesWithNetlistNode(String topID, String NetlistNodeID) {
         Topology topology = findTopology(topID);
         if (topology == null) {
-            System.out.println("Topology ID not found in saved topologies");
+//            System.out.println("Topology ID not found in saved topologies");
             return null;
         }
         List<Component> deviceList = new ArrayList<>();
@@ -117,7 +124,7 @@ public class Topologies {
         else
             return deviceList;
     }
-
+    //
     private Topology findTopology(String topID) {
         for (Object topology : queryTopologies()) {
             Topology top = (Topology) topology;
