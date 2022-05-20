@@ -15,6 +15,8 @@ public class Topology {
         this.components = components;
     }
 
+    public String getId() { return id; }
+
     @Override
     public String toString() {
         String topology = "Topology ID: " + this.id + "\n";

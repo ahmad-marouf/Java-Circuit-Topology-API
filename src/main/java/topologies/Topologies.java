@@ -64,6 +64,17 @@ public class Topologies {
 
     }
 
+    public List<Topology> queryTopologies() {
+        return this.topologies;
+    }
+
+    public void deleteTopology(String topID) {
+        for (int i = 0; i < this.topologies.size(); i++) {
+            if (this.topologies.get(i).getId().equalsIgnoreCase(topID))
+                this.topologies.remove(i);
+        }
+    }
+
     @Override
     public String toString() {
         String topologies = "----------------\n";
