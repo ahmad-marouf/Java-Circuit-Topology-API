@@ -1,6 +1,8 @@
 package netlists;
 
 
+import org.json.simple.JSONObject;
+
 public class ResistorNetlist implements Netlist {
 
     private String t1;
@@ -9,6 +11,14 @@ public class ResistorNetlist implements Netlist {
     public ResistorNetlist(String t1, String t2) {
         this.t1 = t1;
         this.t2 = t2;
+    }
+
+    @Override
+    public JSONObject formatJSON() {
+        JSONObject netlistObj = new JSONObject();
+        netlistObj.put("t1", this.t1);
+        netlistObj.put("t2", this.t2);
+        return netlistObj;
     }
 
     @Override

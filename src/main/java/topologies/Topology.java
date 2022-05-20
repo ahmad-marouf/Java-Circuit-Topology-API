@@ -1,6 +1,8 @@
 package topologies;
 
 import components.Component;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,16 @@ public class Topology {
         this.components = components;
     }
 
+    public JSONArray formatJSON() {
+        JSONArray componentsArray = new JSONArray();
+        for (Object component : this.components) {
+            Component comp = (Component) component;
+            JSONObject compObj = comp.formatJSON();
+            componentsArray.add(compObj);
+        }
+        return componentsArray;
+    }
+
     public String getId() { return id; }
 
     @Override
@@ -25,4 +37,6 @@ public class Topology {
         }
         return topology;
     }
+
+
 }

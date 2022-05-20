@@ -1,5 +1,7 @@
 package components;
 
+import org.json.simple.JSONObject;
+
 public class NmosMeasure implements Measure {
 
     private float def;
@@ -12,6 +14,15 @@ public class NmosMeasure implements Measure {
         this.max = max;
     }
 
+    @Override
+    public JSONObject formatJSON() {
+        JSONObject measureObj = new JSONObject();
+        measureObj.put("default", this.def);
+        measureObj.put("min", this.min);
+        measureObj.put("max", this.max);
+        return measureObj;
+    }
+
     public float getDef() { return def; }
 
     public float getMin() { return min; }
@@ -22,4 +33,6 @@ public class NmosMeasure implements Measure {
     public String toString() {
         return  "default=" + def + ", min=" + min + ", max=" + max;
     }
+
+
 }

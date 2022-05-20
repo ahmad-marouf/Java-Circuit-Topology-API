@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,7 +62,22 @@ public class Topologies {
     }
 
     public void writeJSON(String topID, String fileName) {
+        Topology topology = findTopology(topID);
+        if (topology == null) {
+            System.out.println("Topology ID not found in saved topologies");
+            return;
+        }
 
+        JSONObject topologyObj = new JSONObject();
+        topologyObj.put("id", topID);
+        topologyObj.put("components", topology.formatJSON());
+
+        try (FileWriter file = new FileWriter(fileName)) {
+            file.write(topologyObj.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Topology> queryTopologies() {
@@ -73,6 +89,15 @@ public class Topologies {
             if (this.topologies.get(i).getId().equalsIgnoreCase(topID))
                 this.topologies.remove(i);
         }
+    }
+
+    public Topology findTopology(String topID) {
+        for (Object topology : queryTopologies()) {
+            Topology top = (Topology) topology;
+            if (top.getId().equalsIgnoreCase(topID))
+                return top;
+        }
+        return null;
     }
 
     @Override

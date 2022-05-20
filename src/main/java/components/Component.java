@@ -22,12 +22,20 @@ public abstract class Component {
         this.id = id;
     }
 
+    public JSONObject formatJSON() {
+        JSONObject compObj = new JSONObject();
+        compObj.put("type", this.type);
+        compObj.put("id", this.id);
+        compObj.put(this.measureType(), this.measure.formatJSON());
+        compObj.put("netlist", this.netlist.formatJSON());
+        return compObj;
+    }
+
     public abstract String measureType();
     public abstract void parseJSONMeasure(JSONObject jsonObject);
     public abstract void parseJSONNetlist(JSONObject jsonObject);
 
     public void setMeasure(Measure measure) { this.measure = measure; }
-
     public void setNetlist(Netlist netlist) { this.netlist = netlist; }
 
     @Override

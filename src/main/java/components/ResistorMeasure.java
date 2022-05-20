@@ -1,5 +1,7 @@
 package components;
 
+import org.json.simple.JSONObject;
+
 public class ResistorMeasure implements Measure {
 
     private int def;
@@ -10,6 +12,15 @@ public class ResistorMeasure implements Measure {
         this.def = def;
         this.min = min;
         this.max = max;
+    }
+
+    @Override
+    public JSONObject formatJSON() {
+        JSONObject measureObj = new JSONObject();
+        measureObj.put("default", this.def);
+        measureObj.put("min", this.min);
+        measureObj.put("max", this.max);
+        return measureObj;
     }
 
     public int getDef() { return def; }

@@ -1,6 +1,8 @@
 package netlists;
 
 
+import org.json.simple.JSONObject;
+
 public class NmosNetlist implements Netlist {
 
     private String drain;
@@ -14,7 +16,18 @@ public class NmosNetlist implements Netlist {
     }
 
     @Override
+    public JSONObject formatJSON() {
+        JSONObject netlistObj = new JSONObject();
+        netlistObj.put("drain", this.drain);
+        netlistObj.put("gate", this.gate);
+        netlistObj.put("source", this.source);
+        return netlistObj;
+    }
+
+    @Override
     public String toString() {
         return "drain='" + drain + '\'' + ", gate='" + gate + '\'' + ", source='" + source + '\'';
     }
+
+
 }
